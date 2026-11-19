@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaArrowRight, FaCheck, FaCode, FaMobile, FaShoppingCart } from "react-icons/fa";
+import { FaArrowRight, FaCheck, FaCode, FaLayerGroup, FaMobile, FaServer, FaShoppingCart, FaTachometerAlt } from "react-icons/fa";
 import SectionHeading from "../SectionHeading";
 
 const services = [
@@ -18,10 +18,34 @@ const services = [
     ],
   },
   {
+    icon: FaServer,
+    title: "Backend Development",
+    description:
+      "Secure, scalable APIs and services in C#/.NET, Node.js and PHP, backed by well-designed SQL and NoSQL databases and ready for real traffic.",
+    features: [
+      "ASP.NET Core Web APIs",
+      "Node.js & PHP Services",
+      "Auth, Roles & Security",
+      "Payments & Third-Party APIs",
+    ],
+  },
+  {
+    icon: FaLayerGroup,
+    title: "Full-Stack Development",
+    description:
+      "End-to-end products from database to interface: I design the data model, build the API, ship the frontend and deploy it all, so one engineer owns the whole picture.",
+    features: [
+      "Next.js + .NET / Node.js",
+      "Database Design",
+      "Cloud Deployment & CI/CD",
+      "Ongoing Support",
+    ],
+  },
+  {
     icon: FaMobile,
     title: "Mobile App Development",
     description:
-      "Cross-platform mobile applications using React Native and Flutter. Native performance with shared codebase efficiency.",
+      "Cross-platform mobile applications built with React Native and Expo. Native performance with shared codebase efficiency.",
     features: [
       "iOS & Android",
       "Cross-Platform",
@@ -41,6 +65,18 @@ const services = [
       "SEO Optimization",
     ],
   },
+  {
+    icon: FaTachometerAlt,
+    title: "Admin Consoles & Dashboards",
+    description:
+      "Back-office tools your team actually enjoys using, to manage bookings, orders, content and customers, with role-based access and live analytics.",
+    features: [
+      "Role-Based Access",
+      "Analytics & Reporting",
+      "Content Management",
+      "Booking & Order Management",
+    ],
+  },
 ];
 
 interface ServicesProps {
@@ -58,7 +94,7 @@ export default function Services({ scrollToSection }: ServicesProps) {
           description="Digital solutions tailored to turn your ideas into powerful, scalable applications."
         />
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <motion.div
               key={service.title}

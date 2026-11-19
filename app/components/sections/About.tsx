@@ -18,7 +18,7 @@ const facts = [
   { icon: FaMapMarkerAlt, title: "Based in", value: "Lagos, Nigeria" },
   { icon: FaCalendarAlt, title: "Experience", value: "3+ years" },
   { icon: FaGraduationCap, title: "Education", value: "B.Sc Computer Science" },
-  { icon: FaRocket, title: "Focus", value: "Web & mobile" },
+  { icon: FaRocket, title: "Focus", value: "Full-stack & mobile" },
 ];
 
 const interests = [
@@ -47,13 +47,14 @@ const interests = [
 // Syntax-highlighted "profile" rendered as code
 const codeLines: [string, string][][] = [
   [["k", "const "], ["v", "victor"], ["p", " = {"]],
-  [["p", "  role: "], ["s", '"Software Engineer"'], ["p", ","]],
+  [["p", "  role: "], ["s", '"Full-Stack Software Engineer"'], ["p", ","]],
   [["p", "  company: "], ["s", '"Xown Solutions"'], ["p", ","]],
   [["p", "  location: "], ["s", '"Lagos, Nigeria"'], ["p", ","]],
   [["p", "  school: "], ["s", '"Landmark University, B.Sc CS"'], ["p", ","]],
   [["p", "  stack: ["]],
   [["s", '    "React"'], ["p", ", "], ["s", '"Next.js"'], ["p", ", "], ["s", '"TypeScript"'], ["p", ","]],
-  [["s", '    "React Native"'], ["p", ", "], ["s", '"Node.js"'], ["p", ", "], ["s", '"NestJS"']],
+  [["s", '    "C# / .NET"'], ["p", ", "], ["s", '"Node.js"'], ["p", ", "], ["s", '"PHP"'], ["p", ","]],
+  [["s", '    "React Native"'], ["p", ", "], ["s", '"SQL Server"']],
   [["p", "  ],"]],
   [["p", "  cares: "], ["s", '"fast, reliable, accessible software"'], ["p", ","]],
   [["p", "};"]],
@@ -74,29 +75,73 @@ export default function About() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading eyebrow="Who I am" title="About" accent="Me" />
 
-        <div className="mb-20 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        {/* Row 1: photo beside the bio (the photo stretches to the text's height on desktop).
+            Row 2: code card beside the quick facts and mission. */}
+        <div className="mb-20 grid gap-12 lg:grid-cols-2 lg:gap-16">
+          {/* Photo */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="relative mx-auto w-full min-w-0 max-w-sm lg:h-full"
+          >
+            <div className="absolute -inset-3 -rotate-2 rounded-3xl bg-gradient-to-br from-gold-400/30 to-gold-700/10 blur-sm" />
+            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-ink-700 shadow-2xl shadow-black/50 lg:aspect-auto lg:h-full">
+              <Image
+                src="/victor.jpg"
+                alt="Victor Ezike"
+                fill
+                sizes="(min-width: 640px) 384px, 100vw"
+                className="object-cover object-[50%_85%]"
+              />
+            </div>
+          </motion.div>
+
+          {/* Bio */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="min-w-0"
+          >
+            <h3 className="mb-5 text-3xl font-bold sm:text-4xl">
+              <span className="text-gold-300">Full-Stack</span> Software
+              Engineer
+            </h3>
+            <p className="mb-5 text-lg leading-relaxed text-ink-200">
+              I&apos;m Victor Ezike, a Software Engineer at Xown Solutions in
+              Lagos and a Computer Science graduate of Landmark University. I
+              build fast, scalable products end to end: React, Next.js,
+              TypeScript and React Native on the front, C#/.NET (ASP.NET
+              Core), Node.js and PHP on the back, SQL Server, MySQL or MongoDB
+              underneath, all shipped on AWS, Azure and Vercel.
+            </p>
+            <p className="mb-5 leading-relaxed text-ink-400">
+              I wrote my first production code as a frontend intern while
+              still a student, went on to work remotely with the team at
+              Lendastack, and today I own products from the database up: the
+              website, the admin console and the API behind them. That includes
+              the 247Travels booking platform, which handles 10,000+
+              concurrent users during peak season and has processed over ₦50M
+              in payments.
+            </p>
+            <p className="leading-relaxed text-ink-400">
+              I care about the details people feel but rarely notice: pages
+              that load in under two seconds, interfaces that work on every
+              screen, and code the next engineer will be glad to inherit.
+            </p>
+          </motion.div>
+
           {/* Code card */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="relative mx-auto w-full min-w-0 max-w-lg space-y-10"
+            className="theme-dark relative mx-auto w-full min-w-0 max-w-lg self-center"
           >
-            <div className="relative mx-auto w-full max-w-sm">
-              <div className="absolute -inset-3 -rotate-2 rounded-3xl bg-gradient-to-br from-gold-400/30 to-gold-700/10 blur-sm" />
-              <div className="relative aspect-square overflow-hidden rounded-2xl border border-ink-700 shadow-2xl shadow-black/50">
-                <Image
-                  src="/victor.png"
-                  alt="Victor Ezike"
-                  fill
-                  sizes="(min-width: 640px) 384px, 100vw"
-                  className="object-cover"
-                />
-              </div>
-            </div>
-
-            <div className="relative">
               <div className="absolute -inset-3 rotate-2 rounded-3xl bg-gradient-to-br from-gold-400/30 to-gold-700/10 blur-sm" />
               <div className="relative overflow-hidden rounded-2xl border border-ink-700 bg-ink-950 shadow-2xl shadow-black/50">
                 <div className="flex items-center gap-2 border-b border-ink-800 bg-ink-900 px-4 py-3">
@@ -126,43 +171,16 @@ export default function About() {
                   </code>
                 </pre>
               </div>
-            </div>
           </motion.div>
 
-          {/* Bio */}
+          {/* Quick facts + mission */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
-            className="min-w-0 space-y-8"
+            className="min-w-0 space-y-8 self-center"
           >
-            <div>
-              <h3 className="mb-5 text-3xl font-bold sm:text-4xl">
-                <span className="text-gold-300">Passionate</span> Software
-                Engineer
-              </h3>
-              <p className="mb-5 text-lg leading-relaxed text-ink-200">
-                I&apos;m Victor Ezike, a Software Engineer at Xown Solutions in
-                Lagos and a Computer Science graduate of Landmark University. I
-                build fast, scalable web and mobile products with React,
-                Next.js, TypeScript and React Native, backed by Node.js, NestJS
-                and MongoDB or SQL databases, and shipped on AWS and Vercel.
-              </p>
-              <p className="mb-5 leading-relaxed text-ink-400">
-                I wrote my first production code as a frontend intern while
-                still a student, went on to work remotely with the team at
-                Lendastack, and today I lead builds like the 247Travels booking
-                platform, which handles 10,000+ concurrent users during peak
-                season and has processed over ₦50M in payments.
-              </p>
-              <p className="leading-relaxed text-ink-400">
-                I care about the details people feel but rarely notice: pages
-                that load in under two seconds, interfaces that work on every
-                screen, and code the next engineer will be glad to inherit.
-              </p>
-            </div>
-
             <dl className="grid grid-cols-2 gap-4">
               {facts.map((item) => (
                 <div

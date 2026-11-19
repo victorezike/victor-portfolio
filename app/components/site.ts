@@ -4,7 +4,7 @@ export const SITE_URL = "https://victor-ezike.vercel.app";
 export const SITE_NAME = "Victor Ezike";
 export const SITE_TITLE = "Victor Ezike | Software Engineer";
 export const SITE_DESCRIPTION =
-  "Victor Ezike is a Software Engineer in Lagos, Nigeria, building fast, polished web and mobile products with React, Next.js, TypeScript and React Native.";
+  "Victor Ezike is a Software Engineer in Lagos, Nigeria, building fast, polished full-stack web and mobile products with React, Next.js, TypeScript, React Native, C#/.NET, Node.js and PHP.";
 
 export const RESUME_PATH = "/Victor_Ezike_Resume.pdf";
 export const RESUME_FILENAME = "Victor_Ezike_Resume.pdf";

@@ -34,13 +34,77 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-montserrat);
   --font-mono: var(--font-geist-mono);
-  --font-display: var(--font-display-serif);
+  --font-display: var(--font-montserrat);
 }
 
 :root {
   color-scheme: dark;
+}
+
+/*
+ * Light mode: the same palette, re-pointed. The ink scale flips (950 is the
+ * page, 50 the strongest text), "white" becomes the heading colour, and gold
+ * deepens to bronze so it stays readable as text on light backgrounds. Light
+ * ink-950 on bronze is what the gold buttons and badges use for their label.
+ * Every pairing used on the site meets WCAG AA contrast (4.5:1 or better).
+ */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --color-ink-50: #0f1726;
+  --color-ink-100: #1c2638;
+  --color-ink-200: #2c3850;
+  --color-ink-300: #3e4a62;
+  --color-ink-400: #535f78;
+  --color-ink-500: #6a7690;
+  --color-ink-600: #b3bccc;
+  --color-ink-700: #d3d9e4;
+  --color-ink-800: #e4e8f0;
+  --color-ink-900: #eef1f6;
+  --color-ink-950: #f8f9fc;
+  --color-gold-200: #9a6a2b;
+  --color-gold-300: #8d6026;
+  --color-gold-400: #7f5622;
+  --color-gold-500: #714c1e;
+  --color-gold-600: #634219;
+  --color-gold-700: #553815;
+  --color-white: #0b1220;
+  --color-black: rgb(15 23 42 / 0.35);
+  --color-navy: #c7d3e6;
+  --color-emerald-300: oklch(43.2% 0.095 166.913);
+  --color-emerald-400: oklch(50.8% 0.118 165.612);
+  --color-red-300: oklch(44.4% 0.177 26.899);
+  --color-red-400: oklch(50.5% 0.213 27.518);
+}
+
+/* Surfaces that stay dark in both themes (e.g. the code card in About) */
+:root[data-theme="light"] .theme-dark {
+  color-scheme: dark;
+  --color-ink-50: #f4f6fa;
+  --color-ink-100: #e6eaf2;
+  --color-ink-200: #cdd4e2;
+  --color-ink-300: #aab5ca;
+  --color-ink-400: #8090ae;
+  --color-ink-500: #5d6b8c;
+  --color-ink-600: #44526f;
+  --color-ink-700: #2c3a55;
+  --color-ink-800: #1a2740;
+  --color-ink-900: #0e1829;
+  --color-ink-950: #080f1c;
+  --color-gold-200: #ead7b0;
+  --color-gold-300: #dfc28c;
+  --color-gold-400: #d1a861;
+  --color-gold-500: #b5863e;
+  --color-gold-600: #966b30;
+  --color-gold-700: #77542a;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-navy: #1f3a5f;
+  --color-emerald-300: oklch(84.5% 0.143 164.978);
+  --color-emerald-400: oklch(76.5% 0.177 163.223);
+  --color-red-300: oklch(80.8% 0.114 19.571);
+  --color-red-400: oklch(70.4% 0.191 22.216);
 }
 
 html {
@@ -75,19 +139,19 @@ section[id] {
 body {
   background: var(--color-ink-950);
   color: var(--color-ink-100);
-  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
 }
 
 h1,
 h2,
 h3 {
-  font-family: var(--font-display-serif), Georgia, serif;
-  letter-spacing: -0.01em;
+  font-family: var(--font-montserrat), system-ui, sans-serif;
+  letter-spacing: -0.02em;
 }
 
 ::selection {
-  background: rgba(209, 168, 97, 0.35);
-  color: #fff;
+  background: color-mix(in srgb, var(--color-gold-400) 35%, transparent);
+  color: var(--color-white);
 }
 
 /* Custom animations */

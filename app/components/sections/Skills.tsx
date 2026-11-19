@@ -14,6 +14,10 @@ import {
   FaProjectDiagram,
   FaCubes,
   FaSitemap,
+  FaServer,
+  FaDatabase,
+  FaUserShield,
+  FaCreditCard,
 } from "react-icons/fa";
 import {
   SiTailwindcss,
@@ -27,8 +31,18 @@ import {
   SiVercel,
   SiNetlify,
   SiGithubactions,
+  SiDotnet,
+  SiNodedotjs,
+  SiPhp,
+  SiNestjs,
+  SiPrisma,
+  SiGraphql,
+  SiMysql,
+  SiSwagger,
+  SiCloudinary,
+  SiAmazonwebservices,
 } from "react-icons/si";
-import { TbDeviceMobileCode } from "react-icons/tb";
+import { TbBrandCSharp, TbDeviceMobileCode, TbSql } from "react-icons/tb";
 import SectionHeading from "../SectionHeading";
 
 interface SkillGroup {
@@ -55,6 +69,21 @@ const groups: SkillGroup[] = [
     ],
   },
   {
+    title: "Backend",
+    description: "Secure, scalable APIs and services",
+    icon: FaServer,
+    skills: [
+      { name: "C# / .NET", icon: TbBrandCSharp },
+      { name: "ASP.NET Core Web API", icon: SiDotnet },
+      { name: "Entity Framework Core", icon: SiDotnet },
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "NestJS", icon: SiNestjs },
+      { name: "PHP", icon: SiPhp },
+      { name: "REST, OData & GraphQL", icon: SiGraphql },
+      { name: "JWT, Identity & OAuth", icon: FaUserShield },
+    ],
+  },
+  {
     title: "Mobile",
     description: "Cross-platform mobile applications",
     icon: TbDeviceMobileCode,
@@ -63,18 +92,32 @@ const groups: SkillGroup[] = [
       { name: "Expo", icon: SiExpo },
       { name: "Mobile UI Patterns", icon: TbDeviceMobileCode },
       { name: "State Management", icon: FaProjectDiagram },
+    ],
+  },
+  {
+    title: "Data & Integrations",
+    description: "Databases, payments and cloud services",
+    icon: FaDatabase,
+    skills: [
+      { name: "SQL Server", icon: TbSql },
+      { name: "MySQL", icon: SiMysql },
       { name: "MongoDB", icon: SiMongodb },
+      { name: "Prisma", icon: SiPrisma },
+      { name: "Stripe, Paystack & Flutterwave", icon: FaCreditCard },
+      { name: "Cloudinary", icon: SiCloudinary },
+      { name: "AWS (S3, CloudFront, Amplify)", icon: SiAmazonwebservices },
     ],
   },
   {
     title: "Architecture",
-    description: "Scalable, maintainable frontend codebases",
+    description: "Scalable, maintainable codebases, front to back",
     icon: FaLayerGroup,
     skills: [
       { name: "Component Architecture", icon: FaLayerGroup },
       { name: "State Management", icon: FaProjectDiagram },
       { name: "Reusable UI Patterns", icon: FaCubes },
-      { name: "Project Structure", icon: FaSitemap },
+      { name: "API Design & Swagger", icon: SiSwagger },
+      { name: "Admin Consoles & Dashboards", icon: FaSitemap },
     ],
   },
   {
@@ -92,7 +135,7 @@ const groups: SkillGroup[] = [
   },
 ];
 
-const coreStack = ["React", "Next.js", "TypeScript", "React Native", "Tailwind CSS"];
+const coreStack = ["React", "Next.js", "TypeScript", "C# / .NET", "Node.js", "PHP", "React Native", "Tailwind CSS"];
 
 export default function Skills() {
   return (
@@ -104,7 +147,7 @@ export default function Skills() {
           eyebrow="Toolkit"
           title="Technical"
           accent="Expertise"
-          description="The technologies I use day to day to design, build and ship production apps."
+          description="The technologies I use day to day to design, build and ship production apps, from the interface to the API and database."
         />
 
         {/* Core stack */}
@@ -128,7 +171,7 @@ export default function Skills() {
           ))}
         </motion.div>
 
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {groups.map((group, index) => (
             <motion.div
               key={group.title}

@@ -78,7 +78,7 @@ export async function POST(request: NextRequest) {
 
 Thanks for dropping your email on my portfolio. My code reviewer (also me) approved it instantly.
 
-I'm Victor, a Software Engineer in Lagos. I spend my days building web and mobile apps with React, Next.js, React Native and Node.js, and my nights wondering why something that worked yesterday doesn't work today. (It's usually caching. It's always caching.)
+I'm Victor, a Software Engineer in Lagos. I spend my days building web and mobile apps with React, Next.js and React Native on the front and C#/.NET, Node.js and PHP on the back, and my nights wondering why something that worked yesterday doesn't work today. (It's usually caching. It's always caching.)
 
 Here's what you just signed up for:
 • A short note whenever I ship something new
@@ -107,7 +107,7 @@ P.S. Want out at any point? Reply "unsubscribe" and I'll remove you faster than 
             </p>
 
             <p style="color: #e0e0e0; font-size: 16px; line-height: 1.8; margin: 0 0 20px 0;">
-              I'm <strong style="color: #C39248;">Victor</strong>, a Software Engineer in Lagos. I spend my days building web and mobile apps with React, Next.js, React Native and Node.js, and my nights wondering why something that worked yesterday doesn't work today. <em style="color: #b0b0b0;">(It's usually caching. It's always caching.)</em>
+              I'm <strong style="color: #C39248;">Victor</strong>, a Software Engineer in Lagos. I spend my days building web and mobile apps with React, Next.js and React Native on the front and C#/.NET, Node.js and PHP on the back, and my nights wondering why something that worked yesterday doesn't work today. <em style="color: #b0b0b0;">(It's usually caching. It's always caching.)</em>
             </p>
 
             <div style="background: rgba(195, 146, 72, 0.1); border-left: 4px solid #C39248; padding: 20px; border-radius: 8px; margin: 30px 0;">

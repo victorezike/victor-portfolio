@@ -41,7 +41,7 @@ export default function Home({ scrollToSection }: HomeProps) {
       </div>
 
       {/* Gradient overlay keeps text readable over the 3D scene */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(8,15,28,0.55)_0%,rgba(8,15,28,0.9)_70%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,color-mix(in_srgb,var(--color-ink-950)_55%,transparent)_0%,color-mix(in_srgb,var(--color-ink-950)_90%,transparent)_70%)]" />
       <div className="pointer-events-none absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-ink-950 to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-5xl px-4 text-center sm:px-6 lg:px-8">
@@ -70,11 +70,14 @@ export default function Home({ scrollToSection }: HomeProps) {
           {...fadeUp(0.35)}
           className="mx-auto mb-10 max-w-2xl text-lg leading-relaxed text-ink-300 sm:text-xl"
         >
-          I build fast, polished web and mobile products with{" "}
+          I build fast, polished web and mobile products end to end, from{" "}
           <span className="text-ink-100">React</span>,{" "}
           <span className="text-ink-100">Next.js</span> and{" "}
-          <span className="text-ink-100">React Native</span>, turning ideas
-          into interfaces people enjoy using.
+          <span className="text-ink-100">React Native</span> interfaces to{" "}
+          <span className="text-ink-100">C#/.NET</span>,{" "}
+          <span className="text-ink-100">Node.js</span> and{" "}
+          <span className="text-ink-100">PHP</span> backends, turning ideas
+          into software people enjoy using.
         </motion.p>
 
         <motion.div

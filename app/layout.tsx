@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Playfair_Display } from "next/font/google";
+import { Geist_Mono, Montserrat } from "next/font/google";
 import "./globals.css";
 import VisitorTracker from "./components/VisitorTracker";
 import EmailCapture from "./components/EmailCapture";
@@ -12,18 +12,13 @@ import {
   socials,
 } from "./components/site";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
   subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const displaySerif = Playfair_Display({
-  variable: "--font-display-serif",
   subsets: ["latin"],
 });
 
@@ -42,6 +37,12 @@ export const metadata: Metadata = {
     "React developer",
     "Next.js developer",
     "React Native",
+    "Full-stack developer",
+    "Backend developer",
+    "C# .NET developer",
+    "ASP.NET Core",
+    "Node.js developer",
+    "PHP developer",
     "Lagos",
     "Nigeria",
   ],
@@ -93,7 +94,7 @@ const personJsonLd = {
         addressCountry: "NG",
       },
       email: `mailto:${EMAIL}`,
-      knowsAbout: ["React", "Next.js", "TypeScript", "React Native", "Tailwind CSS", "Frontend development"],
+      knowsAbout: ["React", "Next.js", "TypeScript", "React Native", "C#", ".NET", "ASP.NET Core", "Node.js", "PHP", "SQL Server", "Tailwind CSS", "Full-stack development", "Backend development"],
       sameAs: socials.filter((s) => s.href.startsWith("http")).map((s) => s.href),
     },
     {
@@ -107,15 +108,21 @@ const personJsonLd = {
   ],
 };
 
+// Runs before the page paints, so the saved (or system) theme applies with no flash
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark"){t=matchMedia("(prefers-color-scheme: light)").matches?"light":"dark"}document.documentElement.dataset.theme=t}catch(e){document.documentElement.dataset.theme="dark"}})()`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${displaySerif.variable} antialiased`}
+        className={`${montserrat.variable} ${geistMono.variable} antialiased`}
       >
         <script
           type="application/ld+json"

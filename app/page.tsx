@@ -9,6 +9,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { FaArrowUp, FaBars, FaFileAlt, FaTimes } from "react-icons/fa";
+import ThemeToggle from "./components/ThemeToggle";
 
 // Import section components
 import Home from "./components/sections/Home";
@@ -160,15 +161,18 @@ export default function Portfolio() {
                 </a>
               </div>
 
-              <button
-                className="flex h-10 w-10 items-center justify-center rounded-lg text-ink-200 hover:bg-ink-800 lg:hidden cursor-pointer"
-                onClick={() => setMenuOpen((open) => !open)}
-                aria-label={menuOpen ? "Close menu" : "Open menu"}
-                aria-expanded={menuOpen}
-                aria-controls="mobile-menu"
-              >
-                {menuOpen ? <FaTimes /> : <FaBars />}
-              </button>
+              <div className="flex items-center gap-1 lg:ml-2">
+              <ThemeToggle />
+                <button
+                  className="flex h-10 w-10 items-center justify-center rounded-lg text-ink-200 hover:bg-ink-800 lg:hidden cursor-pointer"
+                  onClick={() => setMenuOpen((open) => !open)}
+                  aria-label={menuOpen ? "Close menu" : "Open menu"}
+                  aria-expanded={menuOpen}
+                  aria-controls="mobile-menu"
+                >
+                  {menuOpen ? <FaTimes /> : <FaBars />}
+                </button>
+              </div>
             </div>
           </div>
 
@@ -225,23 +229,22 @@ export default function Portfolio() {
         {/* Footer */}
         <footer className="border-t border-ink-800 bg-ink-950 py-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
-              <div className="text-center md:text-left">
+            <div className="flex flex-col items-center justify-between gap-8 lg:flex-row">
+              <div className="text-center lg:text-left">
                 <div className="font-display text-2xl font-bold text-white">
                   Victor Ezike
                 </div>
                 <p className="mt-1 text-sm text-ink-400">
-                  Software engineer · Building for the web &amp; mobile from
-                  Lagos.
+                  Full-stack software engineer · Web, mobile &amp; backend.
                 </p>
               </div>
 
-              <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm">
+              <ul className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm lg:flex-nowrap lg:gap-x-5 xl:gap-x-6">
                 {navItems.map((item) => (
                   <li key={item.id}>
                     <button
                       onClick={() => scrollToSection(item.id)}
-                      className="text-ink-400 transition-colors hover:text-gold-300 cursor-pointer"
+                      className="whitespace-nowrap text-ink-400 transition-colors hover:text-gold-300 cursor-pointer"
                     >
                       {item.label}
                     </button>

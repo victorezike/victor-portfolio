@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { FaArrowRight, FaCheck, FaExternalLinkAlt, FaGithub, FaStar } from "react-icons/fa";
+import { FaArrowRight, FaCheck, FaExternalLinkAlt, FaGithub, FaLayerGroup, FaStar } from "react-icons/fa";
 import { GITHUB_URL } from "../site";
 import SectionHeading from "../SectionHeading";
 
@@ -14,6 +14,8 @@ interface Project {
   demo: string;
   category: string;
   highlights?: string[];
+  /** The parts of the product I built */
+  scope?: string[];
 }
 
 const spotlight: Project = {
@@ -30,6 +32,12 @@ const spotlight: Project = {
     "Sub-250ms TTI with Next.js ISR, API caching and AWS CloudFront",
   ],
 };
+
+// What I built on each project. "Full stack" projects have a C#/.NET API I wrote alongside the site and admin console.
+const FULL_STACK = ["Frontend", "Backend API", "Admin console"];
+const FRONTEND_ADMIN = ["Frontend", "Admin console"];
+const FRONTEND_BACKEND = ["Frontend", "Backend API"];
+const FRONTEND = ["Frontend"];
 
 const projects: Project[] = [
   {
@@ -51,13 +59,134 @@ const projects: Project[] = [
     category: "Corporate",
   },
   {
+    title: "xTechHub",
+    description:
+      "An online school for tech careers where learners take courses in product management, design and engineering, earn certificates and book one-to-one sessions with mentors. I built the learner site, the admin console for courses, mentors and learners, and the ASP.NET Core API behind both, with Google sign-in, Stripe payments, auto-generated PDF certificates and an xUnit test suite.",
+    image: "/projects/xtechhub.jpg",
+    technologies: ["Next.js", "TypeScript", "C# / .NET", "EF Core", "SQL Server", "Stripe"],
+    demo: "https://xtechhub.ai/",
+    category: "EdTech",
+    scope: FULL_STACK,
+  },
+  {
+    title: "Xown Scorecard",
+    description:
+      "A lead-generation platform where businesses build, launch and optimise scorecards that turn visitors into qualified leads. I built the scorecard builder and dashboard and the .NET API behind it, with Microsoft sign-in, file storage on AWS S3 and downloadable PDF reports for every respondent.",
+    image: "/projects/scorecard.jpg",
+    technologies: ["Next.js", "TypeScript", "C# / .NET", "SQL Server", "AWS S3"],
+    demo: "https://scoreapp.xown.global/",
+    category: "SaaS",
+    scope: FULL_STACK,
+  },
+  {
     title: "Dees Travels",
     description:
-      "A travel and tours platform where customers search and book flights and hotels, explore popular destinations and tour packages, and get instant help from an AI travel agent, with an affiliate programme for partners.",
+      "A travel and tours platform where customers search and book flights and hotels, explore destinations and tour packages, and get instant help from an AI travel agent, with an affiliate programme for partners. I built the customer site, the operations console and the ASP.NET Core booking API, secured with Microsoft Identity and Azure Key Vault.",
     image: "/projects/dees.jpg",
-    technologies: ["Next.js", "React", "Tailwind CSS"],
+    technologies: ["Next.js", "React", "Prisma", "C# / .NET", "OData", "Azure"],
     demo: "https://deestravels.com/",
     category: "Travel",
+    scope: FULL_STACK,
+  },
+  {
+    title: "TMS UK Properties",
+    description:
+      "A UK-registered property firm specialising in real estate investment, property management and wealth creation for international investors, particularly from Nigeria and the diaspora. I built the public site, the admin console and the .NET API, with Stripe payments, IdentityServer authentication and Microsoft Graph email.",
+    image: "/projects/tms.jpg",
+    technologies: ["Next.js", "React", "C# / .NET", "SQL Server", "Stripe"],
+    demo: "https://www.tmsukproperties.co.uk/",
+    category: "Real Estate",
+    scope: FULL_STACK,
+  },
+  {
+    title: "Moores Energy",
+    description:
+      "A tech-driven, NMDPRA-licensed LPG plant handling 4,000+ cylinder refills a month. Customers order cooking gas in three steps, pay securely and track doorstep delivery. I built the ordering site, the admin console with sales analytics, and the ASP.NET Core API with Paystack payments and email notifications.",
+    image: "/projects/moores.jpg",
+    technologies: ["Next.js", "Redux Toolkit", "C# / .NET", "SQL Server", "Paystack"],
+    demo: "https://mooresenergy.com/",
+    category: "Gas & Energy",
+    scope: FULL_STACK,
+  },
+  {
+    title: "The Ark Bearers",
+    description:
+      "The home of The Ark Bearers of God Ministry, helping people grow in faith through worship, sermons, events, online giving and community connection. I built the website, the admin console the team uses to publish sermons and events, and the .NET API with JWT authentication, verified online donations and Cloudinary media storage.",
+    image: "/projects/arkbearers.jpg",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "C# / .NET", "EF Core", "SQL Server"],
+    demo: "https://thearkbearers.org/",
+    category: "Faith & Community",
+    scope: FULL_STACK,
+  },
+  {
+    title: "SmatX",
+    description:
+      "A UK transport and logistics company moving people and goods with professional drivers and transparent pricing. Customers request rides, removals, cargo and fresh-produce deliveries online and drivers apply to join the fleet. I built the website, the admin console for requests and drivers, and the .NET API.",
+    image: "/projects/smatx.jpg",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "C# / .NET"],
+    demo: "https://smatx.co.uk/",
+    category: "Logistics",
+    scope: FULL_STACK,
+  },
+  {
+    title: "Bablo Homes",
+    description:
+      "A UK property investment company that lets investors own a part of the UK property market from anywhere in the world, with deal enquiries, project showcases, a VIP investor programme and compliance information. I built the website, the admin console and the .NET API.",
+    image: "/projects/bablo.jpg",
+    technologies: ["Next.js", "React", "SCSS", "C# / .NET"],
+    demo: "https://bablohomes.co.uk/",
+    category: "Real Estate",
+    scope: FULL_STACK,
+  },
+  {
+    title: "Travel Inn Booking",
+    description:
+      "An IATA-certified online travel agency with one-way, round-trip and multi-city flight search, travel insurance, flexible payments and dedicated customer and affiliate portals. I built the booking site, the admin console with booking analytics and the ASP.NET Core API.",
+    image: "/projects/travelinn.jpg",
+    technologies: ["Next.js", "React", "Tailwind CSS", "C# / .NET", "OData"],
+    demo: "https://travelinnbooking.com/",
+    category: "Travel",
+    scope: FULL_STACK,
+  },
+  {
+    title: "Jenick Travels & Tours",
+    description:
+      "An IATA-accredited travel agency in Lagos, incorporated in 2011, covering flight bookings, visa processing, vacation planning, study-abroad packages and guided business tours. I built the customer site, the admin console with booking analytics and the ASP.NET Core API.",
+    image: "/projects/jenick.jpg",
+    technologies: ["Next.js", "React", "GSAP", "C# / .NET", "OData"],
+    demo: "https://jenicktravels.com/",
+    category: "Travel",
+    scope: FULL_STACK,
+  },
+  {
+    title: "Patelo Travels",
+    description:
+      "A Lagos-based travel management company serving corporate organisations, travel affiliates and individual travellers since 1992, with live flight and hotel search, fare deals, tour packages and visa support. I built the customer site, the admin console and the .NET API.",
+    image: "/projects/patelo.jpg",
+    technologies: ["Next.js", "React", "Tailwind CSS", "C# / .NET", "Recharts"],
+    demo: "https://patelotravels.com/",
+    category: "Travel",
+    scope: FULL_STACK,
+  },
+  {
+    title: "Xown Global",
+    description:
+      "The consulting arm of Xown, whose SCaLeXp™ framework helps organisations gain clarity, build structure and scale technology-driven growth, with an online assessment, books, events and workshops. I built the website and the .NET API that powers it.",
+    image: "/projects/xownglobal.jpg",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "C# / .NET", "EF Core", "SQL Server"],
+    demo: "https://xown.global/",
+    category: "Consulting",
+    scope: FRONTEND_BACKEND,
+  },
+  {
+    title: "Travel Atal",
+    description:
+      "An online travel platform for booking flights, hotels, curated tours and airport transfers, with 'book now, pay over time' financing that spreads costs into easy instalments. I built the booking site and the admin console for managing bookings, tours, flights and customers.",
+    image: "/projects/travelatal.jpg",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Recharts"],
+    demo: "https://travelatal.com/",
+    category: "Travel",
+    scope: FRONTEND_ADMIN,
   },
   {
     title: "Darabara",
@@ -87,22 +216,24 @@ const projects: Project[] = [
     category: "Agriculture",
   },
   {
-    title: "xTechHub",
+    title: "CyberX Summit",
     description:
-      "An innovative edutech platform that helps learners and early-career professionals acquire future-ready digital and technology skills. xTechHub bridges the gap between academic learning and real-world employment by blending structured technical training with community support and practical career development.",
-    image: "/projects/xtechhub.jpg",
-    technologies: ["Next.js", "React", "Tailwind CSS"],
-    demo: "https://xtechhub.ai/",
-    category: "EdTech",
+      "The event site for CyberX Summit, a Lagos cybersecurity conference run in partnership with Kaspersky, with speaker and agenda details, a past-summit video and attendee registration that emails confirmations automatically.",
+    image: "/projects/cyberx.jpg",
+    technologies: ["Next.js", "React", "SCSS", "Nodemailer"],
+    demo: "https://cyberxsummit.africa/",
+    category: "Events",
+    scope: FRONTEND,
   },
   {
-    title: "Jenick Travels & Tours",
+    title: "Platinum Services",
     description:
-      "An IATA-accredited travel agency in Lagos, incorporated in 2011. The platform covers flight bookings, visa processing, vacation planning, study-abroad packages and guided business tours, such as China discovery trips for entrepreneurs.",
-    image: "/projects/jenick.jpg",
-    technologies: ["Next.js", "React", "Tailwind CSS"],
-    demo: "https://jenicktravels.com/",
-    category: "Travel",
+      "A US concierge and staffing company serving class-A luxury apartments, condominium associations and multi-family residences from Boston to Miami, providing resident concierges, doormen and package porters.",
+    image: "/projects/platinum.jpg",
+    technologies: ["Next.js", "React", "Tailwind CSS", "Nodemailer"],
+    demo: "https://platinum-servicesllc.com/",
+    category: "Concierge",
+    scope: FRONTEND,
   },
   {
     title: "LightMega Immigration",
@@ -114,33 +245,6 @@ const projects: Project[] = [
     category: "Immigration",
   },
   {
-    title: "TMS UK Properties",
-    description:
-      "A prominent UK-registered property firm specialising in real estate investment, property management and wealth creation. Led by CEO Kayode Adeagbo, TMS helps international investors, particularly from Nigeria and the diaspora, tap into the UK property market.",
-    image: "/projects/tms.jpg",
-    technologies: ["Next.js", "React"],
-    demo: "https://www.tmsukproperties.co.uk/",
-    category: "Real Estate",
-  },
-  {
-    title: "Travel Atal",
-    description:
-      "An online travel platform for booking flights, hotels, curated tours and airport transfers at competitive fares. Its 'book now, pay over time' financing spreads the cost of flights, hotels, visas and tours into easy instalments.",
-    image: "/projects/travelatal.jpg",
-    technologies: ["Next.js", "React"],
-    demo: "https://travelatal.com/",
-    category: "Travel",
-  },
-  {
-    title: "Platinum Services",
-    description:
-      "A US concierge and staffing company serving class-A luxury apartments, condominium associations and multi-family residences from Boston to Miami. It provides resident concierges, doormen and package porters, plus a mobile concierge app for residents.",
-    image: "/projects/platinum.jpg",
-    technologies: ["Next.js", "React", "Tailwind CSS"],
-    demo: "https://platinum-servicesllc.com/",
-    category: "Concierge",
-  },
-  {
     title: "Asegun",
     description:
       "A UK accounting firm with 25+ years of experience, serving 150+ individuals, SMEs and law firms. Services include outsourced legal cashiering for solicitors, business accounting, self-assessment tax returns and Xero-powered cloud accounting with real-time financial insight.",
@@ -148,24 +252,6 @@ const projects: Project[] = [
     technologies: ["React", "Tailwind", "SCSS"],
     demo: "https://asegun.co.uk/",
     category: "Accounting & Finance",
-  },
-  {
-    title: "Patelo Travels",
-    description:
-      "A Lagos-based travel management company that has served corporate organisations, travel affiliates and individual travellers since 1992. The platform offers live flight and hotel search, curated fare deals, tour packages, visa support and an affiliate programme.",
-    image: "/projects/patelo.jpg",
-    technologies: ["Next.js", "React"],
-    demo: "https://patelotravels.com/",
-    category: "Travel",
-  },
-  {
-    title: "Moores Energy",
-    description:
-      "A tech-driven, NMDPRA-licensed LPG filling plant handling 4,000+ cylinder refills a month. Customers order cooking gas in three steps on the website or app, pay securely and track doorstep delivery within 45 minutes to 3 hours, with loyalty rewards and bulk supply for businesses.",
-    image: "/projects/moores.jpg",
-    technologies: ["React", "Tailwind", "SCSS"],
-    demo: "https://mooresenergy.com/",
-    category: "Gas & Energy",
   },
 ];
 
@@ -230,7 +316,7 @@ export default function Projects() {
           eyebrow="Selected work"
           title="Featured"
           accent="Projects"
-          description={`${projects.length + 1} live products I've built for brands across travel, e-commerce, real estate, agriculture, education, energy and professional services. Click any project to visit the live site.`}
+          description={`${projects.length + 1} live products I've built for brands across travel, real estate, education, logistics, energy, e-commerce, events and professional services. On many I built the whole product: the website, the admin console and the C#/.NET API behind them. Click any project to visit the live site.`}
         />
 
         {/* Spotlight project */}
@@ -311,6 +397,13 @@ export default function Projects() {
                 <h3 className="mb-3 text-2xl font-bold text-white transition-colors duration-300 group-hover:text-gold-300">
                   {project.title}
                 </h3>
+                {project.scope && (
+                  <p className="mb-3 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs font-semibold uppercase tracking-wider text-ink-300">
+                    <FaLayerGroup className="text-gold-400" aria-hidden />
+                    <span className="sr-only">Built: </span>
+                    {project.scope.join(" · ")}
+                  </p>
+                )}
                 <p className="mb-5 line-clamp-3 text-sm leading-relaxed text-ink-300">
                   {project.description}
                 </p>

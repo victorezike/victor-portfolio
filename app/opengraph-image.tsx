@@ -51,7 +51,7 @@ export default function OpenGraphImage() {
         </div>
 
         <div style={{ fontSize: 28, color: "#aab5ca", fontFamily: "sans-serif" }}>
-          React · Next.js · TypeScript · React Native · Lagos, Nigeria
+          React · Next.js · C#/.NET · Node.js · PHP · Lagos
         </div>
       </div>
     ),
