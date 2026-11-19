@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -63,7 +62,7 @@ const codeLines: [string, string][][] = [
 const tokenClass: Record<string, string> = {
   k: "text-gold-400",
   v: "text-sky-300",
-  s: "text-emerald-300",
+  s: "text-amber-200",
   p: "text-ink-300",
 };
 
@@ -75,36 +74,16 @@ export default function About() {
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading eyebrow="Who I am" title="About" accent="Me" />
 
-        {/* Row 1: photo beside the bio (the photo stretches to the text's height on desktop).
-            Row 2: code card beside the quick facts and mission. */}
-        <div className="mb-20 grid gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Photo */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="relative mx-auto w-full min-w-0 max-w-sm lg:h-full"
-          >
-            <div className="absolute -inset-3 -rotate-2 rounded-3xl bg-gradient-to-br from-gold-400/30 to-gold-700/10 blur-sm" />
-            <div className="relative aspect-[3/4] overflow-hidden rounded-2xl border border-ink-700 shadow-2xl shadow-black/50 lg:aspect-auto lg:h-full">
-              <Image
-                src="/victor.jpg"
-                alt="Victor Ezike"
-                fill
-                sizes="(min-width: 640px) 384px, 100vw"
-                className="object-cover object-[50%_85%]"
-              />
-            </div>
-          </motion.div>
-
+        {/* Desktop: code card on the left, bio then quick facts and mission on the right.
+            Phones: bio, code card, then facts and mission. */}
+        <div className="mb-20 grid gap-12 lg:grid-cols-2 lg:gap-x-16 lg:gap-y-10">
           {/* Bio */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
-            className="min-w-0"
+            className="min-w-0 lg:col-start-2 lg:row-start-1"
           >
             <h3 className="mb-5 text-3xl font-bold sm:text-4xl">
               <span className="text-gold-300">Full-Stack</span> Software
@@ -113,24 +92,18 @@ export default function About() {
             <p className="mb-5 text-lg leading-relaxed text-ink-200">
               I&apos;m Victor Ezike, a Software Engineer at Xown Solutions in
               Lagos and a Computer Science graduate of Landmark University. I
-              build fast, scalable products end to end: React, Next.js,
-              TypeScript and React Native on the front, C#/.NET (ASP.NET
-              Core), Node.js and PHP on the back, SQL Server, MySQL or MongoDB
-              underneath, all shipped on AWS, Azure and Vercel.
+              build products end to end, with React, Next.js and React Native
+              on the front and C#/.NET, Node.js and PHP on the back.
             </p>
             <p className="mb-5 leading-relaxed text-ink-400">
-              I wrote my first production code as a frontend intern while
-              still a student, went on to work remotely with the team at
-              Lendastack, and today I own products from the database up: the
-              website, the admin console and the API behind them. That includes
-              the 247Travels booking platform, which handles 10,000+
-              concurrent users during peak season and has processed over ₦50M
-              in payments.
+              I started as a frontend intern, worked remotely with Lendastack,
+              and today own products from the database up, including the
+              247Travels booking platform: 10,000+ concurrent users and over
+              ₦50M in payments.
             </p>
             <p className="leading-relaxed text-ink-400">
-              I care about the details people feel but rarely notice: pages
-              that load in under two seconds, interfaces that work on every
-              screen, and code the next engineer will be glad to inherit.
+              I care about fast pages, interfaces that work on every screen,
+              and code the next engineer will be glad to inherit.
             </p>
           </motion.div>
 
@@ -140,7 +113,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="theme-dark relative mx-auto w-full min-w-0 max-w-lg self-center"
+            className="theme-dark relative mx-auto w-full min-w-0 max-w-lg self-center lg:col-start-1 lg:row-span-2 lg:row-start-1"
           >
               <div className="absolute -inset-3 rotate-2 rounded-3xl bg-gradient-to-br from-gold-400/30 to-gold-700/10 blur-sm" />
               <div className="relative overflow-hidden rounded-2xl border border-ink-700 bg-ink-950 shadow-2xl shadow-black/50">
@@ -179,7 +152,7 @@ export default function About() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             viewport={{ once: true }}
-            className="min-w-0 space-y-8 self-center"
+            className="min-w-0 space-y-8 lg:col-start-2 lg:row-start-2"
           >
             <dl className="grid grid-cols-2 gap-4">
               {facts.map((item) => (

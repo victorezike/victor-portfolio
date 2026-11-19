@@ -1,36 +1,37 @@
 @import "tailwindcss";
 
 /*
- * Theme: "Navy & Champagne"
- * Ink is a navy-tinted neutral scale built around #1F3A5F; gold is a muted
- * champagne accent that sits well on it.
+ * Theme: "Graphite & Teal"
+ * Ink is a neutral graphite scale; the accent (still named "gold" in the
+ * class names so components don't change) is teal. "navy" is a deep teal
+ * used for soft gradient washes.
  */
 @theme {
-  --color-ink-50: #f4f6fa;
-  --color-ink-100: #e6eaf2;
-  --color-ink-200: #cdd4e2;
-  --color-ink-300: #aab5ca;
-  --color-ink-400: #8090ae;
-  --color-ink-500: #5d6b8c;
-  --color-ink-600: #44526f;
-  --color-ink-700: #2c3a55;
-  --color-ink-800: #1a2740;
-  --color-ink-900: #0e1829;
-  --color-ink-950: #080f1c;
+  --color-ink-50: #fafafa;
+  --color-ink-100: #f4f4f5;
+  --color-ink-200: #e4e4e7;
+  --color-ink-300: #c8c8ce;
+  --color-ink-400: #a1a1aa;
+  --color-ink-500: #71717a;
+  --color-ink-600: #52525b;
+  --color-ink-700: #3a3a41;
+  --color-ink-800: #232327;
+  --color-ink-900: #141416;
+  --color-ink-950: #0a0a0c;
 
-  --color-gold-50: #fbf7ef;
-  --color-gold-100: #f5ecd8;
-  --color-gold-200: #ead7b0;
-  --color-gold-300: #dfc28c;
-  --color-gold-400: #d1a861;
-  --color-gold-500: #b5863e;
-  --color-gold-600: #966b30;
-  --color-gold-700: #77542a;
-  --color-gold-800: #5f4426;
-  --color-gold-900: #4d3822;
-  --color-gold-950: #2b1e10;
+  --color-gold-50: #f0fdfa;
+  --color-gold-100: #ccfbf1;
+  --color-gold-200: #99f6e4;
+  --color-gold-300: #5eead4;
+  --color-gold-400: #2dd4bf;
+  --color-gold-500: #14b8a6;
+  --color-gold-600: #0d9488;
+  --color-gold-700: #0f766e;
+  --color-gold-800: #115e59;
+  --color-gold-900: #134e4a;
+  --color-gold-950: #042f2e;
 
-  --color-navy: #1f3a5f;
+  --color-navy: #0f2f2c;
 }
 
 @theme inline {
@@ -45,33 +46,33 @@
 
 /*
  * Light mode: the same palette, re-pointed. The ink scale flips (950 is the
- * page, 50 the strongest text), "white" becomes the heading colour, and gold
- * deepens to bronze so it stays readable as text on light backgrounds. Light
- * ink-950 on bronze is what the gold buttons and badges use for their label.
+ * page, 50 the strongest text), "white" becomes the heading colour, and the
+ * teal deepens so it stays readable as text on light backgrounds. Light
+ * ink-950 on deep teal is what the accent buttons and badges use for their label.
  * Every pairing used on the site meets WCAG AA contrast (4.5:1 or better).
  */
 :root[data-theme="light"] {
   color-scheme: light;
-  --color-ink-50: #0f1726;
-  --color-ink-100: #1c2638;
-  --color-ink-200: #2c3850;
-  --color-ink-300: #3e4a62;
-  --color-ink-400: #535f78;
-  --color-ink-500: #6a7690;
-  --color-ink-600: #b3bccc;
-  --color-ink-700: #d3d9e4;
-  --color-ink-800: #e4e8f0;
-  --color-ink-900: #eef1f6;
-  --color-ink-950: #f8f9fc;
-  --color-gold-200: #9a6a2b;
-  --color-gold-300: #8d6026;
-  --color-gold-400: #7f5622;
-  --color-gold-500: #714c1e;
-  --color-gold-600: #634219;
-  --color-gold-700: #553815;
-  --color-white: #0b1220;
-  --color-black: rgb(15 23 42 / 0.35);
-  --color-navy: #c7d3e6;
+  --color-ink-50: #09090b;
+  --color-ink-100: #18181b;
+  --color-ink-200: #27272a;
+  --color-ink-300: #3f3f46;
+  --color-ink-400: #52525b;
+  --color-ink-500: #6b6b74;
+  --color-ink-600: #c2c2c9;
+  --color-ink-700: #dedee3;
+  --color-ink-800: #ebebef;
+  --color-ink-900: #f3f3f5;
+  --color-ink-950: #fbfbfc;
+  --color-gold-200: #0f7a71;
+  --color-gold-300: #0d7068;
+  --color-gold-400: #0b655e;
+  --color-gold-500: #0f5c56;
+  --color-gold-600: #114e49;
+  --color-gold-700: #0f403c;
+  --color-white: #09090b;
+  --color-black: rgb(9 9 11 / 0.25);
+  --color-navy: #cdebe7;
   --color-emerald-300: oklch(43.2% 0.095 166.913);
   --color-emerald-400: oklch(50.8% 0.118 165.612);
   --color-red-300: oklch(44.4% 0.177 26.899);
@@ -81,26 +82,26 @@
 /* Surfaces that stay dark in both themes (e.g. the code card in About) */
 :root[data-theme="light"] .theme-dark {
   color-scheme: dark;
-  --color-ink-50: #f4f6fa;
-  --color-ink-100: #e6eaf2;
-  --color-ink-200: #cdd4e2;
-  --color-ink-300: #aab5ca;
-  --color-ink-400: #8090ae;
-  --color-ink-500: #5d6b8c;
-  --color-ink-600: #44526f;
-  --color-ink-700: #2c3a55;
-  --color-ink-800: #1a2740;
-  --color-ink-900: #0e1829;
-  --color-ink-950: #080f1c;
-  --color-gold-200: #ead7b0;
-  --color-gold-300: #dfc28c;
-  --color-gold-400: #d1a861;
-  --color-gold-500: #b5863e;
-  --color-gold-600: #966b30;
-  --color-gold-700: #77542a;
+  --color-ink-50: #fafafa;
+  --color-ink-100: #f4f4f5;
+  --color-ink-200: #e4e4e7;
+  --color-ink-300: #c8c8ce;
+  --color-ink-400: #a1a1aa;
+  --color-ink-500: #71717a;
+  --color-ink-600: #52525b;
+  --color-ink-700: #3a3a41;
+  --color-ink-800: #232327;
+  --color-ink-900: #141416;
+  --color-ink-950: #0a0a0c;
+  --color-gold-200: #99f6e4;
+  --color-gold-300: #5eead4;
+  --color-gold-400: #2dd4bf;
+  --color-gold-500: #14b8a6;
+  --color-gold-600: #0d9488;
+  --color-gold-700: #0f766e;
   --color-white: #fff;
   --color-black: #000;
-  --color-navy: #1f3a5f;
+  --color-navy: #0f2f2c;
   --color-emerald-300: oklch(84.5% 0.143 164.978);
   --color-emerald-400: oklch(76.5% 0.177 163.223);
   --color-red-300: oklch(80.8% 0.114 19.571);
@@ -220,9 +221,9 @@ h3 {
 
 /* Glow effects */
 .glow-gold {
-  box-shadow: 0 0 20px rgba(209, 168, 97, 0.25);
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.25);
 }
 
 .glow-gold:hover {
-  box-shadow: 0 0 30px rgba(209, 168, 97, 0.4);
+  box-shadow: 0 0 30px rgba(45, 212, 191, 0.4);
 }

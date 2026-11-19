@@ -101,8 +101,8 @@ export function HeroScene() {
   return (
     <>
       <ambientLight intensity={0.3} />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#D1A861" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#C39248" />
+      <pointLight position={[10, 10, 10]} intensity={1} color="#2DD4BF" />
+      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#14B8A6" />
 
       <Stars
         radius={300}
@@ -114,15 +114,15 @@ export function HeroScene() {
         speed={1}
       />
 
-      <FloatingGeometry position={[-4, 2, -2]} color="#D1A861" speed={1.5} />
-      <FloatingGeometry position={[4, -2, -1]} color="#C39248" speed={1.2} />
-      <FloatingGeometry position={[-2, -3, -3]} color="#EAD7B0" speed={0.8} />
-      <FloatingGeometry position={[2, 3, -4]} color="#A7773A" speed={1.1} />
+      <FloatingGeometry position={[-4, 2, -2]} color="#2DD4BF" speed={1.5} />
+      <FloatingGeometry position={[4, -2, -1]} color="#14B8A6" speed={1.2} />
+      <FloatingGeometry position={[-2, -3, -3]} color="#99F6E4" speed={0.8} />
+      <FloatingGeometry position={[2, 3, -4]} color="#0D9488" speed={1.1} />
 
-      <AnimatedSphere position={[3, 3, -2]} color="#D1A861" />
-      <AnimatedSphere position={[-3, -1, -1]} color="#C39248" />
-      <AnimatedSphere position={[1, -2, -4]} color="#EAD7B0" />
-      <AnimatedSphere position={[-1, 2, -3]} color="#A7773A" />
+      <AnimatedSphere position={[3, 3, -2]} color="#2DD4BF" />
+      <AnimatedSphere position={[-3, -1, -1]} color="#14B8A6" />
+      <AnimatedSphere position={[1, -2, -4]} color="#99F6E4" />
+      <AnimatedSphere position={[-1, 2, -3]} color="#0D9488" />
 
       <OrbitControls
         enableZoom={false}

@@ -104,16 +104,16 @@ Time: ${new Date().toLocaleString()}
         text: adminEmailContent,
         html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
-          <div style="background: linear-gradient(135deg, #C39248 0%, #1F3A5F 100%); padding: 30px; border-radius: 10px 10px 0 0;">
+          <div style="background: linear-gradient(135deg, #0D9488 0%, #134E4A 100%); padding: 30px; border-radius: 10px 10px 0 0;">
             <h2 style="color: white; margin: 0;">📬 New Contact Form Submission</h2>
           </div>
           <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
             <div style="margin-bottom: 20px;">
-              <p style="margin: 5px 0; color: #666;"><strong style="color: #C39248;">From:</strong> ${safe.firstName} ${safe.lastName}</p>
-              <p style="margin: 5px 0; color: #666;"><strong style="color: #C39248;">Email:</strong> <a href="mailto:${safe.email}" style="color: #C39248; text-decoration: none;">${safe.email}</a></p>
-              <p style="margin: 5px 0; color: #666;"><strong style="color: #C39248;">Subject:</strong> ${safe.subject}</p>
+              <p style="margin: 5px 0; color: #666;"><strong style="color: #0D9488;">From:</strong> ${safe.firstName} ${safe.lastName}</p>
+              <p style="margin: 5px 0; color: #666;"><strong style="color: #0D9488;">Email:</strong> <a href="mailto:${safe.email}" style="color: #0D9488; text-decoration: none;">${safe.email}</a></p>
+              <p style="margin: 5px 0; color: #666;"><strong style="color: #0D9488;">Subject:</strong> ${safe.subject}</p>
             </div>
-            <div style="border-top: 2px solid #C39248; padding-top: 20px; margin-top: 20px;">
+            <div style="border-top: 2px solid #0D9488; padding-top: 20px; margin-top: 20px;">
               <p style="color: #333; line-height: 1.6; white-space: pre-wrap;">${safe.message}</p>
             </div>
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; color: #999; font-size: 12px;">
@@ -164,24 +164,24 @@ This is an automated confirmation email from Victor Ezike's portfolio
         text: userEmailContent,
         html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f5f5f5;">
-          <div style="background: linear-gradient(135deg, #C39248 0%, #1F3A5F 100%); padding: 30px; border-radius: 10px 10px 0 0;">
+          <div style="background: linear-gradient(135deg, #0D9488 0%, #134E4A 100%); padding: 30px; border-radius: 10px 10px 0 0;">
             <h2 style="color: white; margin: 0;">✅ Thank You for Reaching Out!</h2>
           </div>
           <div style="background: white; padding: 30px; border-radius: 0 0 10px 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
             <p style="color: #333; font-size: 16px; line-height: 1.6;">Hi <strong>${safe.firstName}</strong>,</p>
             <p style="color: #333; line-height: 1.6;">Thank you for reaching out! I've received your message and will get back to you as soon as possible.</p>
 
-            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #C39248;">
-              <p style="margin: 5px 0; color: #666;"><strong style="color: #C39248;">Your Subject:</strong> ${safe.subject}</p>
-              <p style="margin: 15px 0 5px 0; color: #666;"><strong style="color: #C39248;">Your Message:</strong></p>
+            <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #0D9488;">
+              <p style="margin: 5px 0; color: #666;"><strong style="color: #0D9488;">Your Subject:</strong> ${safe.subject}</p>
+              <p style="margin: 15px 0 5px 0; color: #666;"><strong style="color: #0D9488;">Your Message:</strong></p>
               <p style="color: #333; line-height: 1.6; white-space: pre-wrap;">${safe.message}</p>
             </div>
 
-            <p style="color: #333; line-height: 1.6;">I typically respond within 24-48 hours. In the meantime, feel free to check out my <a href="${GITHUB_URL}" style="color: #C39248; text-decoration: none;">GitHub</a> or connect with me on <a href="${LINKEDIN_URL}" style="color: #C39248; text-decoration: none;">LinkedIn</a>.</p>
+            <p style="color: #333; line-height: 1.6;">I typically respond within 24-48 hours. In the meantime, feel free to check out my <a href="${GITHUB_URL}" style="color: #0D9488; text-decoration: none;">GitHub</a> or connect with me on <a href="${LINKEDIN_URL}" style="color: #0D9488; text-decoration: none;">LinkedIn</a>.</p>
 
             <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
               <p style="color: #333; margin: 5px 0;"><strong>Best regards,</strong></p>
-              <p style="color: #C39248; font-size: 18px; font-weight: bold; margin: 5px 0;">Victor Ezike</p>
+              <p style="color: #0D9488; font-size: 18px; font-weight: bold; margin: 5px 0;">Victor Ezike</p>
               <p style="color: #666; margin: 5px 0;">Software Engineer</p>
             </div>
 

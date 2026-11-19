@@ -16,8 +16,8 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "linear-gradient(135deg, #080f1c 0%, #0e1829 55%, #1f3a5f 100%)",
-          color: "#f4f6fa",
+          background: "linear-gradient(135deg, #0a0a0c 0%, #141416 55%, #0f2f2c 100%)",
+          color: "#fafafa",
           fontFamily: "Georgia, serif",
         }}
       >
@@ -27,8 +27,8 @@ export default function OpenGraphImage() {
               width: 72,
               height: 72,
               borderRadius: 16,
-              background: "linear-gradient(135deg, #dfc28c, #b5863e)",
-              color: "#080f1c",
+              background: "linear-gradient(135deg, #5eead4, #0d9488)",
+              color: "#0a0a0c",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -38,19 +38,19 @@ export default function OpenGraphImage() {
           >
             VE
           </div>
-          <div style={{ fontSize: 26, color: "#aab5ca", fontFamily: "sans-serif" }}>
+          <div style={{ fontSize: 26, color: "#a1a1aa", fontFamily: "sans-serif" }}>
             victor-ezike.vercel.app
           </div>
         </div>
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ fontSize: 92, fontWeight: 700, lineHeight: 1.05 }}>Victor Ezike</div>
-          <div style={{ fontSize: 44, color: "#d1a861", marginTop: 16 }}>
+          <div style={{ fontSize: 44, color: "#2dd4bf", marginTop: 16 }}>
             Software Engineer
           </div>
         </div>
 
-        <div style={{ fontSize: 28, color: "#aab5ca", fontFamily: "sans-serif" }}>
+        <div style={{ fontSize: 28, color: "#a1a1aa", fontFamily: "sans-serif" }}>
           React · Next.js · C#/.NET · Node.js · PHP · Lagos
         </div>
       </div>
