@@ -1,0 +1,164 @@
+@import "tailwindcss";
+
+/*
+ * Theme: "Navy & Champagne"
+ * Ink is a navy-tinted neutral scale built around #1F3A5F; gold is a muted
+ * champagne accent that sits well on it.
+ */
+@theme {
+  --color-ink-50: #f4f6fa;
+  --color-ink-100: #e6eaf2;
+  --color-ink-200: #cdd4e2;
+  --color-ink-300: #aab5ca;
+  --color-ink-400: #8090ae;
+  --color-ink-500: #5d6b8c;
+  --color-ink-600: #44526f;
+  --color-ink-700: #2c3a55;
+  --color-ink-800: #1a2740;
+  --color-ink-900: #0e1829;
+  --color-ink-950: #080f1c;
+
+  --color-gold-50: #fbf7ef;
+  --color-gold-100: #f5ecd8;
+  --color-gold-200: #ead7b0;
+  --color-gold-300: #dfc28c;
+  --color-gold-400: #d1a861;
+  --color-gold-500: #b5863e;
+  --color-gold-600: #966b30;
+  --color-gold-700: #77542a;
+  --color-gold-800: #5f4426;
+  --color-gold-900: #4d3822;
+  --color-gold-950: #2b1e10;
+
+  --color-navy: #1f3a5f;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display-serif);
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Keep section headings clear of the fixed navbar when jumping to them */
+section[id] {
+  scroll-margin-top: 4rem;
+}
+
+/* Visible keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-gold-400);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background: var(--color-ink-950);
+  color: var(--color-ink-100);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display-serif), Georgia, serif;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  background: rgba(209, 168, 97, 0.35);
+  color: #fff;
+}
+
+/* Custom animations */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-ink-900);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--color-gold-400), var(--color-gold-600));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, var(--color-gold-500), var(--color-gold-700));
+}
+
+/* Perspective for 3D effects */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+/* Glow effects */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(209, 168, 97, 0.25);
+}
+
+.glow-gold:hover {
+  box-shadow: 0 0 30px rgba(209, 168, 97, 0.4);
+}
